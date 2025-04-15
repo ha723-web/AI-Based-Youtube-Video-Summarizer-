@@ -7,6 +7,7 @@ from io import BytesIO
 from langdetect import detect
 from googletrans import Translator
 
+
 def get_video_id(youtube_url):
     if "v=" in youtube_url:
         return youtube_url.split("v=")[1].split("&")[0]
@@ -36,7 +37,6 @@ def generate_wordcloud(text):
     img_str = base64.b64encode(buffer.getvalue()).decode()
     return img_str
 
+
 def translate_text(text, target_lang="es"):
-    translator = Translator()
-    translated = translator.translate(text, dest=target_lang)
-    return translated.text
+    return GoogleTranslator(source='auto', target=target_lang).translate(text)
