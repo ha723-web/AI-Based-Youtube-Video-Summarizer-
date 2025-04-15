@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import base64
 from io import BytesIO
 from langdetect import detect
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 
 
 def get_video_id(youtube_url):
@@ -40,3 +40,4 @@ def generate_wordcloud(text):
 
 def translate_text(text, target_lang="es"):
     return GoogleTranslator(source='auto', target=target_lang).translate(text)
+
